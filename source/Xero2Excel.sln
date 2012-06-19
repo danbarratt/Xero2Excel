@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{903D87CF-BE47-45EE-BCEC-218737D06D5D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{49C09D89-60F4-4F3F-AB96-D381A292B345}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xero2Excel.Core", "Xero2Excel.Core\Xero2Excel.Core.csproj", "{9DEE0148-FADF-422D-B504-99433E440879}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xero2Excel.Contracts", "Xero2Excel.Contracts\Xero2Excel.Contracts.csproj", "{C57BEE47-A8EB-4CF5-B7FD-F3A413BA96EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xero2Excel2007AddIn", "Xero2Excel2007AddIn\Xero2Excel2007AddIn.csproj", "{367B4352-3E0E-4CE2-9505-A82CF9C59A3D}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Xero2Excel.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9DEE0148-FADF-422D-B504-99433E440879}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DEE0148-FADF-422D-B504-99433E440879}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DEE0148-FADF-422D-B504-99433E440879}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DEE0148-FADF-422D-B504-99433E440879}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C57BEE47-A8EB-4CF5-B7FD-F3A413BA96EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C57BEE47-A8EB-4CF5-B7FD-F3A413BA96EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C57BEE47-A8EB-4CF5-B7FD-F3A413BA96EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C57BEE47-A8EB-4CF5-B7FD-F3A413BA96EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{367B4352-3E0E-4CE2-9505-A82CF9C59A3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{367B4352-3E0E-4CE2-9505-A82CF9C59A3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{367B4352-3E0E-4CE2-9505-A82CF9C59A3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{367B4352-3E0E-4CE2-9505-A82CF9C59A3D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{367B4352-3E0E-4CE2-9505-A82CF9C59A3D} = {903D87CF-BE47-45EE-BCEC-218737D06D5D}
+		{9DEE0148-FADF-422D-B504-99433E440879} = {49C09D89-60F4-4F3F-AB96-D381A292B345}
+		{C57BEE47-A8EB-4CF5-B7FD-F3A413BA96EE} = {49C09D89-60F4-4F3F-AB96-D381A292B345}
+	EndGlobalSection
+EndGlobal
