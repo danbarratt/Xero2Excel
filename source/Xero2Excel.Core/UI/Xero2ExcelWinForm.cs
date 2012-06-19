@@ -92,12 +92,12 @@ namespace Xero2Excel.UI.Excel2007AddIn {
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void fieldRangesBindButton_Click(object sender, EventArgs e)
         {
-            if (interfaceRangeListview.SelectedItems == null || interfaceRangeListview.SelectedItems.Count <= 0)
+            if (interfaceRangeListview.SelectedItems.Count <= 0)
             {
                 MessageBox.Show(this, "A field range has not been selected. Select a range before binding to the worksheet.", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            if (!_excelApplication.WorkbookIsActive)
+            if (!_excelApplication.IsWorkbookActive)
             {
                 MessageBox.Show(this, "There currently isn't an active workbook in Excel. A range cannot be assigned at this time.", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
@@ -107,7 +107,7 @@ namespace Xero2Excel.UI.Excel2007AddIn {
             BindableField bindableField = (BindableField) entityFieldListViewItem.Tag;
 
             // Set the range name on the selected fields
-            _excelApplication.DefineNamedRangeForSelection(bindableField.RangeName);
+            _excelApplication.SetNamedRange(bindableField.RangeName);
 
             // Refresh the bindings 
             RefreshBoundFieldRanges();
@@ -120,13 +120,13 @@ namespace Xero2Excel.UI.Excel2007AddIn {
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void fieldRangesUnbindButton_Click(object sender, EventArgs e)
         {
-            if (interfaceRangeListview.SelectedItems == null || interfaceRangeListview.SelectedItems.Count <= 0)
+            if (interfaceRangeListview.SelectedItems.Count <= 0)
             {
                 MessageBox.Show(this, "A field range has not been selected. Select a range before binding to the worksheet.", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
-            if (!_excelApplication.WorkbookIsActive)
+            if (!_excelApplication.IsWorkbookActive)
             {
                 MessageBox.Show(this, "There currently isn't an active workbook in Excel. A range cannot be assigned at this time.", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;

@@ -4,12 +4,16 @@ namespace Xero2Excel.Contracts.Interfaces
 {
     public interface IExcelApplicationWrapper
     {
-        bool WorkbookIsActive { get; }
-        string CurrentWorkbookName { get; }
-        string CurrentWorkbookSelectedRange { get; }
-        IDictionary<string, string> CurrentWorkbookNamedRanges();
+        bool IsWorkbookActive { get; }
 
-        void DefineNamedRangeForSelection(string rangeName);
+        string CurrentWorkbookName { get; }
+
+        string GetCurrentSelectedRange { get; }
+
+        IDictionary<string, string> GetAllNamedRanges();
+
+        void SetNamedRange(string rangeName);
+
         void RemoveNamedRange(string rangeName);
 
         string GetAddressForNamedRange(string rangeName);

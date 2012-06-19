@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using Microsoft.Office.Interop.Excel;
 using Xero2Excel.Contracts.Interfaces;
 
-namespace Xero2Excel.UI.Excel2007AddIn
+namespace Xero2Excel2007AddIn
 {
     public class ExcelApplicationWrapper : IExcelApplicationWrapper
     {
@@ -15,7 +14,7 @@ namespace Xero2Excel.UI.Excel2007AddIn
             _application = application;
         }
 
-        public bool WorkbookIsActive
+        public bool IsWorkbookActive
         {
             get
             {
@@ -31,16 +30,16 @@ namespace Xero2Excel.UI.Excel2007AddIn
             }
         }
 
-        public string CurrentWorkbookSelectedRange
+        public string GetCurrentSelectedRange
         {
             get
             {
-                Range selection = _application.Selection as Range;
-                return selection.get_Address(true, true, XlReferenceStyle.xlA1, Type.Missing, Type.Missing);
+                Range selection = (Range)_application.Selection;
+                return selection.Address[true, true, XlReferenceStyle.xlA1, Type.Missing, Type.Missing];
             }
         }
 
-        public IDictionary<string, string> CurrentWorkbookNamedRanges()
+        public IDictionary<string, string> GetAllNamedRanges()
         {
             Dictionary<string, string> namedRanges = new Dictionary<string, string>();
 
@@ -57,7 +56,7 @@ namespace Xero2Excel.UI.Excel2007AddIn
             return namedRanges;
         }
 
-        public void DefineNamedRangeForSelection(string rangeName)
+        public void SetNamedRange(string rangeName)
         {
             Range selection = _application.Selection as Range;
             selection.Name = rangeName;
@@ -69,7 +68,7 @@ namespace Xero2Excel.UI.Excel2007AddIn
 
             try
             {
-                Range range = activeSheet.get_Range(rangeName, Type.Missing);
+                Range range = activeSheet.Range[rangeName, Type.Missing];
                 Name name = (Name)range.Name;
                 name.Delete();
             }
@@ -85,8 +84,8 @@ namespace Xero2Excel.UI.Excel2007AddIn
 
             try
             {
-                Range range = activeSheet.get_Range(rangeName, Type.Missing);
-                return range.get_Address(true, true, XlReferenceStyle.xlA1, Type.Missing, Type.Missing);
+                Range range = activeSheet.Range[rangeName, Type.Missing];
+                return range.Address[true, true, XlReferenceStyle.xlA1, Type.Missing, Type.Missing];
             }
             catch (Exception)
             {
