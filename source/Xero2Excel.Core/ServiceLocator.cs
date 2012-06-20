@@ -1,10 +1,12 @@
 ﻿using Ninject;
 using Ninject.Modules;
 using Xero2Excel.Contracts.Interfaces;
+using Xero2Excel.Core.Config;
+using Xero2Excel.Core.Services;
 
 namespace Xero2Excel.Core
 {
-    public class ServiceLocator
+    public class ServiceLocator : IServiceLocator
     {
         public static readonly ServiceLocator Current = new ServiceLocator();
 
@@ -25,8 +27,8 @@ namespace Xero2Excel.Core
             public override void Load()
             {
                 Bind<IBindingConfigurationManager>().To<BindingConfigurationManager>().InSingletonScope();
-                Bind<IUserConfigurationManager>().To<UserConfigurationManager>().InSingletonScope();
-                //Bind<IXeroWebProxy>().To<XeroOAuthWebProxy>();
+                Bind<IConnectionDetails>().To<ConnectionDetails>().InSingletonScope();
+                Bind<IConnectionManager>().To<ConnectionManager>().InSingletonScope();
             }
         }
 

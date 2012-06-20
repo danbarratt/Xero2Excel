@@ -23,39 +23,12 @@ namespace Xero2Excel.Core {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string ConsumerToken {
+        [global::System.Configuration.DefaultSettingValueAttribute("xxx")]
+        public string ConsumerKey {
             get {
-                return ((string)(this["ConsumerToken"]));
-            }
-            set {
-                this["ConsumerToken"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string AccessToken {
-            get {
-                return ((string)(this["AccessToken"]));
-            }
-            set {
-                this["AccessToken"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<Organisation/>")]
-        public string Organisation {
-            get {
-                return ((string)(this["Organisation"]));
-            }
-            set {
-                this["Organisation"] = value;
+                return ((string)(this["ConsumerKey"]));
             }
         }
     }

@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Xero2Excel.Core;
 using Microsoft.Office.Core;
-using Xero2Excel.UI.Excel2007AddIn;
+using Xero2Excel.Core.UI;
 
 namespace Xero2Excel2007AddIn
 {
@@ -13,14 +13,13 @@ namespace Xero2Excel2007AddIn
     [ComVisible(true)]
     public class Xero2ExcelRibbon : IRibbonExtensibility
     {
+        private Xero2ExcelWinForm _mainForm;
         private readonly ThisAddIn _addIn;
 
         private Microsoft.Office.Interop.Excel.Application Application
         {
             get { return _addIn.Application; }
         }
-
-        private static Xero2ExcelWinForm _mainForm;
 
         public Xero2ExcelRibbon(ThisAddIn addIn)
         {
@@ -45,33 +44,29 @@ namespace Xero2Excel2007AddIn
         public void OnLoad(IRibbonUI ribbonUI)
         {
         }
+        
+        private static void ShowGeneralError(Exception ex)
+        {
+            MessageBox.Show("The Xero Add-in could not be started\r\n" + ex);
+        }
 
-        /// <summary>
-        /// Setups the button_ toggle.
-        /// </summary>
-        /// <param name="control">The control.</param>
-        public void SetupButton_Click(IRibbonControl control)
+        public void OpenMainForm_Click(IRibbonControl ribbon)
         {
             try
             {
-                if (_mainForm == null || !_mainForm.Visible)
+                if (_mainForm == null)
                 {
-                    if (_mainForm == null)
-                    {
-                        _mainForm = new Xero2ExcelWinForm(new ExcelApplicationWrapper(Application), ServiceLocator.Current);
-                    }
-
-                    _mainForm.Show();
+                    _mainForm = new Xero2ExcelWinForm(new ExcelApplicationWrapper(Application), ServiceLocator.Current);
                 }
-                else
+
+                if (!_mainForm.Visible)
                 {
-                    _mainForm.Close();
-                    _mainForm = null;
+                    _mainForm.Show();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("The Xero Add-in could not be started\r\n" + ex);
+                ShowGeneralError(ex);
             }
         }
 
@@ -79,11 +74,6 @@ namespace Xero2Excel2007AddIn
 
         #region Helpers
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="resourceName"></param>
-        /// <returns></returns>
         private static string GetResourceText(string resourceName)
         {
             Assembly asm = Assembly.GetExecutingAssembly();

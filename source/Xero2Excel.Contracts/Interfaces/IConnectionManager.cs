@@ -5,12 +5,8 @@ using System.Text;
 
 namespace Xero2Excel.Contracts.Interfaces
 {
-    public interface IOAuthToken
+    public interface IConnectionManager
     {
-
-        string Key { get; set; }
-
-        string Secret { get; set; }
-
+        bool VerifyConnection();
     }
 }

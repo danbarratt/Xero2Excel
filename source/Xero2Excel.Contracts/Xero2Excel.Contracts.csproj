@@ -73,11 +73,10 @@
     <Compile Include="Entities\Organisation.cs" />
     <Compile Include="Helpers\GenericSerializer.cs" />
     <Compile Include="Interfaces\IBindingConfigurationManager.cs" />
-    <Compile Include="Interfaces\IApiConnectionManager.cs" />
+    <Compile Include="Interfaces\IConnectionDetails.cs" />
+    <Compile Include="Interfaces\IConnectionManager.cs" />
     <Compile Include="Interfaces\IExcelApplicationWrapper.cs" />
-    <Compile Include="Interfaces\IOAuthToken.cs" />
-    <Compile Include="Interfaces\IUserConfigurationManager.cs" />
-    <Compile Include="OAuthToken.cs" />
+    <Compile Include="Interfaces\IServiceLocator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Xero2ExcelConfiguration.cs" />
   </ItemGroup>

@@ -75,17 +75,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApiConnectionManager.cs" />
     <Compile Include="BindingConfigurationManager.cs" />
+    <Compile Include="Config\ApplicationSettings.cs" />
+    <Compile Include="Config\ConnectionDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceLocator.cs" />
+    <Compile Include="Services\ConnectionManager.cs" />
+    <Compile Include="UI\ConfigurationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ConfigurationForm.Designer.cs">
+      <DependentUpon>ConfigurationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Xero2ExcelWinForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Xero2ExcelWinForm.Designer.cs">
       <DependentUpon>Xero2ExcelWinForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserConfigurationManager.cs" />
     <Compile Include="UserSettings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -124,14 +131,15 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="UI\ConfigurationForm.resx">
+      <DependentUpon>ConfigurationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Xero2ExcelWinForm.resx">
       <DependentUpon>Xero2ExcelWinForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Config\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -5,12 +5,7 @@ using System.Text;
 
 namespace Xero2Excel.Contracts.Interfaces
 {
-    public interface IApiConnectionManager
+    public interface IConnectionDetails
     {
-
-        void ValidateConnectionToApi();
-
-        void ConnectToApiUsingOAuth();
-
     }
 }

@@ -3,21 +3,13 @@
     <tabs>
       <tab idMso="TabData">
         <group id="GroupXero" label="Xero" insertAfterMso="GroupGetExternalData">
-          <menu id="MenuXero" 
-                label="Xero" 
-                imageMso="TableSharePointListsRefreshList"
-                description="Connect to Xero to share data with Excel"
-                screentip="Xero2Excel"
-                supertip="Share invoice and accounting data between Xero and Excel"
-                size="large">
-            
-            <button id="ButtonConnect" 
-                    label="Setup Connection.."
-                    imageMso="TableSharePointListsRefreshList"
-                    screentip="Setup the connection to Xero"
-                    supertip="To enable data sharing with this Xero, you'll need to authorise this application"
-                    onAction="SetupButton_Click" />
-          </menu>
+          <button id="ButtonOpenMainForm"
+                  label="From Xero"
+                  imageMso="TableSharePointListsRefreshList"
+                  size="large"
+                  screentip="Xero2Excel"
+                  supertip="Share invoice and accounting data between Xero and Excel"
+                  onAction="OpenMainForm_Click" />
         </group>
       </tab>
     </tabs>
