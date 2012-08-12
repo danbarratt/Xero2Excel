@@ -4,3 +4,6 @@ obj
 _ReSharper.*
 *.suo
 *.user
+*.pfx
+*.pem
+source/packages
