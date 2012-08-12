@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 using Xero2Excel.Contracts.Binding;
 using Xero2Excel.Contracts.Entities;
@@ -9,17 +10,17 @@ namespace Xero2Excel.Core.UI
     public partial class Xero2ExcelWinForm : Form
     {
         private readonly IExcelApplicationWrapper _excelApplication;
-        private readonly IServiceLocator _serviceLocator;
         private readonly IBindingConfigurationManager _configurationManager;
+        private readonly IConnectionManager _connectionManager;
         
         public Xero2ExcelWinForm(IExcelApplicationWrapper excelApplication, IServiceLocator serviceLocator)
         {
             InitializeComponent();
 
             _excelApplication = excelApplication;
-            _serviceLocator = serviceLocator;
 
             _configurationManager = serviceLocator.Get<IBindingConfigurationManager>();
+            _connectionManager = serviceLocator.Get<IConnectionManager>();
             
             // Populate the list of interface names
             foreach (EntityBase entity in _configurationManager.GetRegisteredApiEntities())
@@ -132,8 +133,7 @@ namespace Xero2Excel.Core.UI
         
         private void setupButton_Click(object sender, EventArgs e)
         {
-            ConfigurationForm configurationForm = new ConfigurationForm(_serviceLocator);
-            configurationForm.ShowDialog(this);
+            new ConfigurationForm(_connectionManager).ShowDialog(this);
         }
     }
 }

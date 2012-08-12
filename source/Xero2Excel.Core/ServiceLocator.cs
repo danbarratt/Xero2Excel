@@ -1,4 +1,5 @@
-﻿using Ninject;
+﻿using DevDefined.OAuth.Storage.Basic;
+using Ninject;
 using Ninject.Modules;
 using Xero2Excel.Contracts.Interfaces;
 using Xero2Excel.Core.Config;
@@ -27,8 +28,9 @@ namespace Xero2Excel.Core
             public override void Load()
             {
                 Bind<IBindingConfigurationManager>().To<BindingConfigurationManager>().InSingletonScope();
-                Bind<IConnectionDetails>().To<ConnectionDetails>().InSingletonScope();
+                Bind<IConnectionDetails>().To<PublicConnectionDetails>().InSingletonScope();
                 Bind<IConnectionManager>().To<ConnectionManager>().InSingletonScope();
+                Bind<ITokenRepository>().To<UserSettingsTokenRepository>();
             }
         }
 

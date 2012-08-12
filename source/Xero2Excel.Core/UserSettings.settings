@@ -2,8 +2,20 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Xero2Excel.Core" GeneratedClassName="UserSettings">
   <Profiles />
   <Settings>
-    <Setting Name="ConsumerKey" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">xxx</Value>
+    <Setting Name="PublicConsumerKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">XFD6YPFECHUQRBQSTZECDRFJPXPEJA</Value>
+    </Setting>
+    <Setting Name="PublicConsumerSecret" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">UVNBJOI9LPZ5UF7ZDX7MXVLT7OK33C</Value>
+    </Setting>
+    <Setting Name="RequestTokenJson" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="AccessTokenJson" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="OrganisationJson" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

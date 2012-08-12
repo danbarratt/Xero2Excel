@@ -1,12 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Xero2Excel.Contracts.Interfaces
 {
     public interface IConnectionManager
     {
         bool VerifyConnection();
+        Uri InitialiseConnection();
+        void FinaliseConnection(string oauthVerifier);
+        void ResetConnection();
+        CurrentConnectionDetails GetCurrentConnectionDetails();
     }
 }

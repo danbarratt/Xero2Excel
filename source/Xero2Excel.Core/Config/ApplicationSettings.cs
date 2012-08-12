@@ -5,15 +5,14 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace Xero2Excel.Core.Config
 {
-    public class ApplicationSettings
+    public static class ApplicationSettings
     {
-
-        public X509Certificate2 OAuthSigningCertificate
+        public static X509Certificate2 OAuthSigningCertificate
         {
             get 
             {
                 DirectoryInfo currentDirInfo = new DirectoryInfo(Environment.CurrentDirectory);
-
+                
                 Debug.WriteLine("Current Dir is:" + currentDirInfo.FullName);
 
                 var pfxFiles = currentDirInfo.GetFiles("*.pfx");
@@ -22,6 +21,8 @@ namespace Xero2Excel.Core.Config
                 {
                     Debug.WriteLine(pfxFile.FullName);
                 }
+
+                // TODO..
 
                 return null;
             }

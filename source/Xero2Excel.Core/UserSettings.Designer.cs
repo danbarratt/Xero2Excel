@@ -25,10 +25,55 @@ namespace Xero2Excel.Core {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("xxx")]
-        public string ConsumerKey {
+        [global::System.Configuration.DefaultSettingValueAttribute("XFD6YPFECHUQRBQSTZECDRFJPXPEJA")]
+        public string PublicConsumerKey {
             get {
-                return ((string)(this["ConsumerKey"]));
+                return ((string)(this["PublicConsumerKey"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("UVNBJOI9LPZ5UF7ZDX7MXVLT7OK33C")]
+        public string PublicConsumerSecret {
+            get {
+                return ((string)(this["PublicConsumerSecret"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RequestTokenJson {
+            get {
+                return ((string)(this["RequestTokenJson"]));
+            }
+            set {
+                this["RequestTokenJson"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string AccessTokenJson {
+            get {
+                return ((string)(this["AccessTokenJson"]));
+            }
+            set {
+                this["AccessTokenJson"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string OrganisationJson {
+            get {
+                return ((string)(this["OrganisationJson"]));
+            }
+            set {
+                this["OrganisationJson"] = value;
             }
         }
     }

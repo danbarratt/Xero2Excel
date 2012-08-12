@@ -211,7 +211,9 @@
     <None Include="Xero2Excel2007AddIn_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Xero2ExcelRibbon.xml" />
+    <EmbeddedResource Include="Xero2ExcelRibbon.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xero2Excel.Contracts\Xero2Excel.Contracts.csproj">
